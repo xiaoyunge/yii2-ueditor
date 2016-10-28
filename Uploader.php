@@ -1,5 +1,5 @@
 <?php
-namespace kucha\ueditor;
+namespace yangshihe\ueditor;
 
 
 class Uploader
@@ -54,6 +54,8 @@ class Uploader
 	        $this->uploadFilePath = $this->config['uploadFilePath'];
 	        unset($this->config['uploadFilePath']);
         }
+        // print_r($this->config['uploadFilePath']);exit;
+
         if ($type == "remote") {
             $this->saveRemote();
         } else if ($type == "base64") {
@@ -307,7 +309,6 @@ class Uploader
         if (substr($fullname, 0, 1) != '/') {
             $fullname = '/' . $fullname;
         }
-
         return $this->uploadFilePath . $fullname;
     }
 

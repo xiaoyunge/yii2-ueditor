@@ -19,6 +19,7 @@ class UEditorAction extends Action
         $_config = require(__DIR__ . '/config.php');
         $this->config = ArrayHelper::merge($_config, $this->config);
         $this->uploadFilePath = $_SERVER['DOCUMENT_ROOT'];
+        // print_r($this->config['uploadFilePath']);exit;
         if (isset($this->config['uploadFilePath']) && !empty($this->config['uploadFilePath'])) {
 	        $this->uploadFilePath = $this->config['uploadFilePath'];
 	        unset($this->config['uploadFilePath']);
@@ -130,6 +131,7 @@ class UEditorAction extends Action
                 break;
         }
         /* 生成上传实例对象并完成上传 */
+        $config['uploadFilePath'] = $this->uploadFilePath;
 
         $up = new Uploader($fieldName, $config, $base64);
         /**
