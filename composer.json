@@ -1,0 +1,18 @@
+{
+    "name": "yangshihe/yii2-ueditor",
+    "description": "Yii2百度编辑器",
+    "license": "null",
+    "authors": [
+        {
+            "name": "yangshihe",
+            "email": "yangshihe@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "yangshihe\\ueditor\\": ""
+        }
+    }
+}
