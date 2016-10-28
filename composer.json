@@ -2,17 +2,26 @@
     "name": "yangshihe/yii2-ueditor",
     "description": "Yii2百度编辑器",
     "license": "null",
+    "language": "php",
     "authors": [
         {
             "name": "yangshihe",
             "email": "yangshihe@qq.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {},
+  //  "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
     "autoload": {
         "psr-4": {
             "yangshihe\\ueditor\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
         }
     }
 }
