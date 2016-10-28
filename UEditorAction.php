@@ -177,7 +177,7 @@ class UEditorAction extends Action
         $end = (int)$start + (int)$size;
 
         /* 获取文件列表 */
-        $path = $_SERVER['DOCUMENT_ROOT'] . (substr($path, 0, 1) == "/" ? "" : "/") . $path;
+        $path = $this->uploadFilePath . (substr($path, 0, 1) == "/" ? "" : "/") . $path;
         $files = $this->getfiles($path, $allowFiles);
         if (!count($files)) {
             return json_encode(array(
@@ -271,10 +271,7 @@ class UEditorAction extends Action
                 } else {
                     if (preg_match("/\.(" . $allowFiles . ")$/i", $file)) {
                         $files[] = array(
-                            'url' => substr($path2, strlen($_SERVER['DOCUMENT_ROOT'];
-                            	if (condition) {
-                            		# code...
-                            	})),
+                            'url' => substr($path2, strlen($this->uploadFilePath)),
                             'mtime' => filemtime($path2)
                         );
                     }
