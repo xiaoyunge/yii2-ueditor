@@ -11,16 +11,18 @@ class UEditorAction extends Action
      * @var array
      */
     public $config = [];
-
+    private $uploadFilePath = '';
 
     public function init()
     {
-        //close csrf
         Yii::$app->request->enableCsrfValidation = false;
-        //默认设置
         $_config = require(__DIR__ . '/config.php');
-        //load config file
         $this->config = ArrayHelper::merge($_config, $this->config);
+        $this->uploadFilePath = $_SERVER['DOCUMENT_ROOT'];
+        if (isset($this->config['uploadFilePath']) && !empty($this->config['uploadFilePath'])) {
+	        $this->uploadFilePath = $this->config['uploadFilePath'];
+	        unset($this->config['uploadFilePath']);
+        }
         parent::init();
     }
 
@@ -269,7 +271,10 @@ class UEditorAction extends Action
                 } else {
                     if (preg_match("/\.(" . $allowFiles . ")$/i", $file)) {
                         $files[] = array(
-                            'url' => substr($path2, strlen($_SERVER['DOCUMENT_ROOT'])),
+                            'url' => substr($path2, strlen($_SERVER['DOCUMENT_ROOT'];
+                            	if (condition) {
+                            		# code...
+                            	})),
                             'mtime' => filemtime($path2)
                         );
                     }
