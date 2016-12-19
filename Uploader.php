@@ -49,7 +49,7 @@ class Uploader
         $this->fileField = $fileField;
         $this->config = $config;
         $this->type = $type;
-        $this->uploadFilePath = $_SERVER['DOCUMENT_ROOT'];
+        $this->uploadFilePath = '';
         if (isset($this->config['uploadFilePath']) && !empty($this->config['uploadFilePath'])) {
 	        $this->uploadFilePath = $this->config['uploadFilePath'];
 	        unset($this->config['uploadFilePath']);
